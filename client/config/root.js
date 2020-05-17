@@ -11,6 +11,8 @@ import store, { history } from '../redux'
 import Home from '../components/home'
 import DummyView from '../components/dummy-view'
 import NotFound from '../components/404'
+import Dashmain from '../components/dashmain'
+import Profile from '../components/profile'
 
 import Startup from './startup'
 
@@ -84,6 +86,8 @@ export default (props) => {
           <Switch>
             <Route exact path="/" component={() => <DummyView />} />
             <Route exact path="/dashboard" component={() => <Home />} />
+            <Route exact path="/dashboard/main" component={() => <Dashmain />} />
+            <Route exact path="/dashboard/profile/:username" component={() => <Profile />} />
             <PrivateRouteConnected exact path="/hidden-route" component={() => <DummyView />} />
             <Route component={() => <NotFound />} />
           </Switch>
